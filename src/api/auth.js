@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "//sql12.freesqldatabase.com:3306";
+const API_URL = "https://auth-mysql.vercel.app";
 
 export const signUp = async (userData) => {
   try {
