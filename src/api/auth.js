@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "https://auth-mysql.vercel.app";
+const API_URL = "https://localhost:3306";
 
 export const signUp = async (userData) => {
   try {
