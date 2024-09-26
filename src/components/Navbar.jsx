@@ -14,6 +14,8 @@ import { ThemeProvider, createTheme } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import { signUp, login } from "../api/auth";
 
+import Home from "./Home";
+
 const theme = createTheme();
 
 const modalStyle = {
@@ -117,21 +119,21 @@ function AuthNavbar() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <AppBar position="static">
+      <AppBar position="static" sx={{ bgcolor: "white" }}>
         <Toolbar>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Logo
+          <Typography variant="h4" component="div" sx={{ flexGrow: 1, color: "black" }}>
+            Legal Partners
           </Typography>
           {user ? (
-            <Button color="inherit" onClick={handleLogout}>
+            <Button sx={{color: "black"}} onClick={handleLogout}>
               Logout
             </Button>
           ) : (
             <>
-              <Button color="inherit" onClick={() => setIsLoginOpen(true)}>
+              <Button sx={{color: "black"}} onClick={() => setIsLoginOpen(true)}>
                 Login
               </Button>
-              <Button color="inherit" onClick={() => setIsSignupOpen(true)}>
+              <Button sx={{color: "black"}} onClick={() => setIsSignupOpen(true)}>
                 Sign Up
               </Button>
             </>
@@ -141,7 +143,7 @@ function AuthNavbar() {
 
       {user && (
         <Box sx={{ p: 2, textAlign: "center" }}>
-          <Typography variant="h6">Welcome, {user.name}!</Typography>
+          <Home />
         </Box>
       )}
 
